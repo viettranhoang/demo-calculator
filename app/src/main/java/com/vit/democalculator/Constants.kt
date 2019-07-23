@@ -23,7 +23,7 @@ annotation class Constants {
         const val MUL = "*"
         const val ADD = "+"
         const val DIV = "/"
-        const val SUB = "/"
+        const val SUB = "-"
         const val ZERO = "0"
         const val ONE = "1"
         const val TWO = "2"
