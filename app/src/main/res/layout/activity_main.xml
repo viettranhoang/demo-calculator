@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable name="viewModel"
+                  type="com.vit.democalculator.MainViewModel"/>
+
+        <import type="com.vit.democalculator.Constants"/>
+        
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            tools:ignore="MissingConstraints"
+            android:orientation="vertical"
+            android:background="@android:color/black"
+            tools:context=".MainActivity">
+
+        <TextView
+                android:maxLines="1"
+                android:gravity="bottom|right"
+                android:layout_margin="16dp"
+                android:text="@{viewModel.result.get()}"
+                android:textSize="90sp"
+                android:textColor="@android:color/white"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+        <LinearLayout
+                style="@style/LinearLayout">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickClear()}"
+                        android:background="@drawable/shap_oval_blue"
+                        android:text="@string/button_clear"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/shap_oval_blue"
+                        android:text="@string/button_neg"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/shap_oval_blue"
+                        android:text="@string/button_percent"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickOperation(Constants.DIV)}"
+                        android:text="@string/button_div"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/LinearLayout">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.SEVEN)}"
+                        android:text="@string/button_7"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.EIGHT)}"
+                        android:text="@string/button_8"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.NINE)}"
+                        android:text="@string/button_9"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickOperation(Constants.MUL)}"
+                        android:id="@+id/button_mul"
+                        android:textAllCaps="false"
+                        android:text="@string/button_mul"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/LinearLayout">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.FOUR)}"
+                        android:text="@string/button_4"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.FIVE)}"
+                        android:text="@string/button_5"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.SIX)}"
+                        android:text="@string/button_6"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:id="@+id/button_sub"
+                        android:onClick="@{() -> viewModel.onClickOperation(Constants.SUB)}"
+                        android:text="@string/button_sub"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/LinearLayout">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.ONE)}"
+                        android:text="@string/button_1"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.TWO)}"
+                        android:text="@string/button_2"
+                        style="@style/Button"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.THREE)}"
+                        android:text="@string/button_3"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickOperation(Constants.ADD)}"
+                        android:text="@string/button_add"
+                        style="@style/Button"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/LinearLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_weight="2"
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickNumber(Constants.ZERO)}"
+                        android:background="@drawable/round_corners_grey"
+                        android:text="@string/button_0"
+                        style="@style/Button"
+                        app:layout_constraintDimensionRatio="2:1"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:background="@drawable/round_corners_grey"
+                        android:text="@string/button_comma"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/ConstrainLayout">
+
+                <Button
+                        android:onClick="@{() -> viewModel.onClickEqual()}"
+                        android:text="@string/button_equal"
+                        style="@style/Button"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
